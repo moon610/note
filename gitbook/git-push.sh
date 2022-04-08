@@ -41,7 +41,7 @@ echo "####### commit #######"
  
 sleep 1s
  
-echo "####### 开始推送 #######"
+echo "####### 开始推送note #######"
  
 #if [ ! $3 ]
 #then
@@ -53,7 +53,7 @@ echo "####### 开始推送 #######"
 
 git push
  
-echo "####### 推送成功 #######"
+echo "####### 推送成功note #######"
 
 echo "####### 复制到GitPage #######"
 
@@ -81,8 +81,8 @@ echo "####### commit #######"
  
 sleep 1s
  
-echo "####### 开始推送 #######"
+echo "####### 开始推送page #######"
 
 git push origin develop
  
-echo "####### 推送成功 #######"
+echo "####### 推送成功page #######"
