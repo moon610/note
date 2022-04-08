@@ -1,0 +1,60 @@
+{
+    "title": "notebook",
+    "description": "记录学习和生活",
+    "author": "月歌",
+    "gitbook": "3.2.3",
+    "root": "/doc",
+    "styles": {
+        "website": "styles/website.css"
+    },
+    "plugins": [
+        "-lunr",
+        "-search",
+        "-highlight",
+        "-livereload",
+        "-sharing",
+        "-fontsettings",
+        "search-pro",
+        "chapter-fold",
+        "expandable-chapters",
+        "splitter",
+        "anchor-navigation-ex",
+        "lightbox",
+        "tbfed-pagefooter",
+        "hide-element",
+        "prism",
+        "copy-code-button",
+        "editlink",
+        "summary"
+    ],
+    "pluginsConfig": {
+        "anchor-navigation-ex": {
+            "showLevel": false,
+            "showGoTop": true,
+            "printLog": true
+        },
+        "tbfed-pagefooter": {
+            "copyright": "月明",
+            "modify_label": "该文件最后修改时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "hide-element": {
+            "elements": [
+                ".gitbook-link"
+            ]
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-okaidia.css"
+            ],
+            "ignore": [
+                "null","undefined","vue","HTML","clang","cmd","tex","mysql"
+              ]
+        },
+        "editlink": {
+            "base": "https://github.com/moon610",
+            "label": "Edit This Page",
+            "multilingual": false
+        }
+    }
+}

@@ -1,0 +1,3239 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JavaScript异步机制详解 · notebook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="月歌">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Javascript面向对象编程（二）：构造函数的继承 - 阮一峰的网络日志.html" />
+    
+    
+    <link rel="prev" href="JavaScript实现图片懒加载(Lazyload" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">笔记</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    HTML与CSS基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../HTML与CSS基础/JavaScript使用 Fetch.html">
+            
+                <a href="../HTML与CSS基础/JavaScript使用 Fetch.html">
+            
+                    
+                    JavaScript使用 Fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../HTML与CSS基础/h5笔记.html">
+            
+                <a href="../HTML与CSS基础/h5笔记.html">
+            
+                    
+                    H5笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../HTML与CSS基础/笔记.html">
+            
+                <a href="../HTML与CSS基础/笔记.html">
+            
+                    
+                    笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Vue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Vue/VUE基础.html">
+            
+                <a href="../Vue/VUE基础.html">
+            
+                    
+                    VUE基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Vue/npm命令.html">
+            
+                <a href="../Vue/npm命令.html">
+            
+                    
+                    Npm命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Vue/如何理解vue数据双向绑定原理.html">
+            
+                <a href="../Vue/如何理解vue数据双向绑定原理.html">
+            
+                    
+                    如何理解Vue数据双向绑定原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Vue/手摸手，带你用vue撸后台 系列一（基础篇） - 掘金.html">
+            
+                <a href="../Vue/手摸手，带你用vue撸后台 系列一（基础篇） - 掘金.html">
+            
+                    
+                    手摸手，带你用Vue撸后台 系列一（基础篇）   掘金
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Js笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Day01-基本语法.html">
+            
+                <a href="Day01-基本语法.html">
+            
+                    
+                    Day01 基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Day02-条件结构.html">
+            
+                <a href="Day02-条件结构.html">
+            
+                    
+                    Day02 条件结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Day03-循环结构.html">
+            
+                <a href="Day03-循环结构.html">
+            
+                    
+                    Day03 循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Day04-函数（上）.html">
+            
+                <a href="Day04-函数（上）.html">
+            
+                    
+                    Day04 函数（上）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Day05-函数（下）.html">
+            
+                <a href="Day05-函数（下）.html">
+            
+                    
+                    Day05 函数（下）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Day06-Array数组.html">
+            
+                <a href="Day06-Array数组.html">
+            
+                    
+                    Day06 Array数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Day07-ES5、String字符串.html">
+            
+                <a href="Day07-ES5、String字符串.html">
+            
+                    
+                    Day07 ES5、String字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="Day08-Math、Date.html">
+            
+                <a href="Day08-Math、Date.html">
+            
+                    
+                    Day08 Math、Date
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="Day09-BOM、DOM.html">
+            
+                <a href="Day09-BOM、DOM.html">
+            
+                    
+                    Day09 BOM、DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="Day10-DOM.html">
+            
+                <a href="Day10-DOM.html">
+            
+                    
+                    Day10 DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="Day11-DOM、事件.html">
+            
+                <a href="Day11-DOM、事件.html">
+            
+                    
+                    Day11 DOM、事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="Day12-事件、事件对象.html">
+            
+                <a href="Day12-事件、事件对象.html">
+            
+                    
+                    Day12 事件、事件对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="Day13-事件、正则.html">
+            
+                <a href="Day13-事件、正则.html">
+            
+                    
+                    Day13 事件、正则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="Day14-ES5、ES6.html">
+            
+                <a href="Day14-ES5、ES6.html">
+            
+                    
+                    Day14 ES5、ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="Day15-DOM高级.html">
+            
+                <a href="Day15-DOM高级.html">
+            
+                    
+                    Day15 DOM高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="Day16-运动.html">
+            
+                <a href="Day16-运动.html">
+            
+                    
+                    Day16 运动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="Day17-常见页面效果.html">
+            
+                <a href="Day17-常见页面效果.html">
+            
+                    
+                    Day17 常见页面效果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="Day18-面向对象编程.html">
+            
+                <a href="Day18-面向对象编程.html">
+            
+                    
+                    Day18 面向对象编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="Day20-http、服务端开发.html">
+            
+                <a href="Day20-http、服务端开发.html">
+            
+                    
+                    Day20 Http、服务端开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="Day21-连接数据库、AJAX.html">
+            
+                <a href="Day21-连接数据库、AJAX.html">
+            
+                    
+                    Day21 连接数据库、AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="Day22-AJAX.html">
+            
+                <a href="Day22-AJAX.html">
+            
+                    
+                    Day22 AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="Day23-AJAX、promise、Cookie.html">
+            
+                <a href="Day23-AJAX、promise、Cookie.html">
+            
+                    
+                    Day23 AJAX、Promise、Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="Day24-本地存储、案例.html">
+            
+                <a href="Day24-本地存储、案例.html">
+            
+                    
+                    Day24 本地存储、案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="Day25-设计模式、继承.html">
+            
+                <a href="Day25-设计模式、继承.html">
+            
+                    
+                    Day25 设计模式、继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="Day26-闭包.html">
+            
+                <a href="Day26-闭包.html">
+            
+                    
+                    Day26 闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.26" data-path="Day27-jQuery.html">
+            
+                <a href="Day27-jQuery.html">
+            
+                    
+                    Day27 JQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="Day28-Git.html">
+            
+                <a href="Day28-Git.html">
+            
+                    
+                    Day28 Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="Day29-gulp_.html">
+            
+                <a href="Day29-gulp_.html">
+            
+                    
+                    Day29 Gulp 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="Day30-模板引擎、模块化.html">
+            
+                <a href="Day30-模板引擎、模块化.html">
+            
+                    
+                    Day30 模板引擎、模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="Day31-require.js模块化.html">
+            
+                <a href="Day31-require.js模块化.html">
+            
+                    
+                    Day31 Require.Js模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.31" data-path="Day32-项目案例（一）.html">
+            
+                <a href="Day32-项目案例（一）.html">
+            
+                    
+                    Day32 项目案例（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.32" data-path="Day33-项目案例（二）.html">
+            
+                <a href="Day33-项目案例（二）.html">
+            
+                    
+                    Day33 项目案例（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.33" data-path="Day34-项目案例（三）.html">
+            
+                <a href="Day34-项目案例（三）.html">
+            
+                    
+                    Day34 项目案例（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.34" data-path="Day35-项目案例（四）.html">
+            
+                <a href="Day35-项目案例（四）.html">
+            
+                    
+                    Day35 项目案例（四）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.35" data-path="JS中 for in 与 for of的区别_nO0b-CSDN博客_js中for循环in和of的区.html">
+            
+                <a href="JS中 for in 与 for of的区别_nO0b-CSDN博客_js中for循环in和of的区.html">
+            
+                    
+                    JS中 For In 与 For Of的区别 NO0b CSDN博客 Js中For循环In和Of的区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.36" data-path="JavaScript实现列表无限加载.html">
+            
+                <a href="JavaScript实现列表无限加载.html">
+            
+                    
+                    JavaScript实现列表无限加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.37" data-path="JavaScript实现图片懒加载(Lazyload">
+            
+                <span>
+            
+                    
+                    JavaScript实现图片懒加载(Lazyload)   掘金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.38" data-path="JavaScript异步机制详解.html">
+            
+                <a href="JavaScript异步机制详解.html">
+            
+                    
+                    JavaScript异步机制详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.39" data-path="Javascript面向对象编程（二）：构造函数的继承 - 阮一峰的网络日志.html">
+            
+                <a href="Javascript面向对象编程（二）：构造函数的继承 - 阮一峰的网络日志.html">
+            
+                    
+                    Javascript面向对象编程（二）：构造函数的继承   阮一峰的网络日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.40" data-path="__proto__与prototype.html">
+            
+                <a href="__proto__与prototype.html">
+            
+                    
+                      Proto  与Prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.41" >
+            
+                <span>
+            
+                    
+                    Js学习Step
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.41.1" data-path="js学习step/js学习step.html">
+            
+                <a href="js学习step/js学习step.html">
+            
+                    
+                    Js学习Step
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.42" data-path="js比较两个对象是否相等_承蒙时光不弃1769203735的博客-CSDN博客_js比较两个对象是否.html">
+            
+                <a href="js比较两个对象是否相等_承蒙时光不弃1769203735的博客-CSDN博客_js比较两个对象是否.html">
+            
+                    
+                    Js比较两个对象是否相等 承蒙时光不弃1769203735的博客 CSDN博客 Js比较两个对象是否
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.43" data-path="【JavaScript】ES5_ES6 创建对象与继承 - 掘金.html">
+            
+                <a href="【JavaScript】ES5_ES6 创建对象与继承 - 掘金.html">
+            
+                    
+                    【JavaScript】ES5 ES6 创建对象与继承   掘金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.44" data-path="为什么0.1+0.2=0.30000000000000004而1.1+2.2=3.300000000.html">
+            
+                <a href="为什么0.1+0.2=0.30000000000000004而1.1+2.2=3.300000000.html">
+            
+                    
+                    为什么0.1+0.2=0.30000000000000004而1.1+2.2=3.300000000
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.45" data-path="使用element.matches(selector">
+            
+                <span>
+            
+                    
+                    使用Element.Matches(Selector)实现事件委派
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.46" data-path="内置对象Array.html">
+            
+                <a href="内置对象Array.html">
+            
+                    
+                    内置对象Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.47" data-path="内置对象String.html">
+            
+                <a href="内置对象String.html">
+            
+                    
+                    内置对象String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.48" data-path="函数柯里化 _ 前端修炼小册.html">
+            
+                <a href="函数柯里化 _ 前端修炼小册.html">
+            
+                    
+                    函数柯里化   前端修炼小册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.49" data-path="模拟点击事件.html">
+            
+                <a href="模拟点击事件.html">
+            
+                    
+                    模拟点击事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.50" data-path="解决图片的防盗链导致图片显示不出来（适合所有的防盗链图片） - 氵永 - 博客园.html">
+            
+                <a href="解决图片的防盗链导致图片显示不出来（适合所有的防盗链图片） - 氵永 - 博客园.html">
+            
+                    
+                    解决图片的防盗链导致图片显示不出来（适合所有的防盗链图片）   氵永   博客园
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.51" data-path="解析字符串格式的HTML.html">
+            
+                <a href="解析字符串格式的HTML.html">
+            
+                    
+                    解析字符串格式的HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Other
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../other/git命令.html">
+            
+                <a href="../other/git命令.html">
+            
+                    
+                    Git命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../other/npm删除.html">
+            
+                <a href="../other/npm删除.html">
+            
+                    
+                    Npm删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../other/npm命令.html">
+            
+                <a href="../other/npm命令.html">
+            
+                    
+                    Npm命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../other/吐槽.html">
+            
+                <a href="../other/吐槽.html">
+            
+                    
+                    吐槽
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Web前端面试 面试官系列
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../web前端面试-面试官系列/JavaScript/== _===.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/== _===.html">
+            
+                    
+                    ==  ===
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../web前端面试-面试官系列/JavaScript/BOM.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/BOM.html">
+            
+                    
+                    BOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../web前端面试-面试官系列/JavaScript/Dom.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/Dom.html">
+            
+                    
+                    Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../web前端面试-面试官系列/JavaScript/ajax.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/ajax.html">
+            
+                    
+                    Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../web前端面试-面试官系列/JavaScript/array_api.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/array_api.html">
+            
+                    
+                    Array Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../web前端面试-面试官系列/JavaScript/bind_call_apply.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/bind_call_apply.html">
+            
+                    
+                    Bind Call Apply
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="../web前端面试-面试官系列/JavaScript/cache.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/cache.html">
+            
+                    
+                    Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.8" data-path="../web前端面试-面试官系列/JavaScript/closure.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/closure.html">
+            
+                    
+                    Closure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.9" data-path="../web前端面试-面试官系列/JavaScript/context_stack.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/context_stack.html">
+            
+                    
+                    Context Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.10" data-path="../web前端面试-面试官系列/JavaScript/continue_to_upload.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/continue_to_upload.html">
+            
+                    
+                    Continue To Upload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.11" data-path="../web前端面试-面试官系列/JavaScript/copy.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/copy.html">
+            
+                    
+                    Copy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.12" data-path="../web前端面试-面试官系列/JavaScript/data_type.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/data_type.html">
+            
+                    
+                    Data Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.13" data-path="../web前端面试-面试官系列/JavaScript/debounce_throttle.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/debounce_throttle.html">
+            
+                    
+                    Debounce Throttle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.14" data-path="../web前端面试-面试官系列/JavaScript/event_Model.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/event_Model.html">
+            
+                    
+                    Event Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.15" data-path="../web前端面试-面试官系列/JavaScript/event_agent.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/event_agent.html">
+            
+                    
+                    Event Agent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.16" data-path="../web前端面试-面试官系列/JavaScript/event_loop.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/event_loop.html">
+            
+                    
+                    Event Loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.17" data-path="../web前端面试-面试官系列/JavaScript/function_cache.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/function_cache.html">
+            
+                    
+                    Function Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.18" data-path="../web前端面试-面试官系列/JavaScript/functional_programming.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/functional_programming.html">
+            
+                    
+                    Functional Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.19" data-path="../web前端面试-面试官系列/JavaScript/inherit.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/inherit.html">
+            
+                    
+                    Inherit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.20" data-path="../web前端面试-面试官系列/JavaScript/js_data_structure.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/js_data_structure.html">
+            
+                    
+                    Js Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.21" data-path="../web前端面试-面试官系列/JavaScript/loss_accuracy.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/loss_accuracy.html">
+            
+                    
+                    Loss Accuracy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.22" data-path="../web前端面试-面试官系列/JavaScript/memory_leak.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/memory_leak.html">
+            
+                    
+                    Memory Leak
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.23" data-path="../web前端面试-面试官系列/JavaScript/new.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/new.html">
+            
+                    
+                    New
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.24" data-path="../web前端面试-面试官系列/JavaScript/prototype.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/prototype.html">
+            
+                    
+                    Prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.25" data-path="../web前端面试-面试官系列/JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                    
+                    Pull Up Loading Pull Down Refresh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.26" data-path="../web前端面试-面试官系列/JavaScript/regexp.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/regexp.html">
+            
+                    
+                    Regexp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.27" data-path="../web前端面试-面试官系列/JavaScript/scope.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/scope.html">
+            
+                    
+                    Scope
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.28" data-path="../web前端面试-面试官系列/JavaScript/security.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/security.html">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.29" data-path="../web前端面试-面试官系列/JavaScript/single_sign.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/single_sign.html">
+            
+                    
+                    Single Sign
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.30" data-path="../web前端面试-面试官系列/JavaScript/string_api.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/string_api.html">
+            
+                    
+                    String Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.31" data-path="../web前端面试-面试官系列/JavaScript/tail_recursion.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/tail_recursion.html">
+            
+                    
+                    Tail Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.32" data-path="../web前端面试-面试官系列/JavaScript/this.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/this.html">
+            
+                    
+                    This
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.33" data-path="../web前端面试-面试官系列/JavaScript/type_conversion.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/type_conversion.html">
+            
+                    
+                    Type Conversion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.34" data-path="../web前端面试-面试官系列/JavaScript/typeof_instanceof.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/typeof_instanceof.html">
+            
+                    
+                    Typeof Instanceof
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.35" data-path="../web前端面试-面试官系列/JavaScript/visible.html">
+            
+                <a href="../web前端面试-面试官系列/JavaScript/visible.html">
+            
+                    
+                    Visible
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    NodeJS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../web前端面试-面试官系列/NodeJS/Buffer.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/Buffer.html">
+            
+                    
+                    Buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../web前端面试-面试官系列/NodeJS/EventEmitter.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/EventEmitter.html">
+            
+                    
+                    EventEmitter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../web前端面试-面试官系列/NodeJS/Stream.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/Stream.html">
+            
+                    
+                    Stream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../web前端面试-面试官系列/NodeJS/event_loop.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/event_loop.html">
+            
+                    
+                    Event Loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../web前端面试-面试官系列/NodeJS/file_upload.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/file_upload.html">
+            
+                    
+                    File Upload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../web前端面试-面试官系列/NodeJS/fs.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/fs.html">
+            
+                    
+                    Fs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.7" data-path="../web前端面试-面试官系列/NodeJS/global.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/global.html">
+            
+                    
+                    Global
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.8" data-path="../web前端面试-面试官系列/NodeJS/jwt.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/jwt.html">
+            
+                    
+                    Jwt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.9" data-path="../web前端面试-面试官系列/NodeJS/middleware.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.10" data-path="../web前端面试-面试官系列/NodeJS/nodejs.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/nodejs.html">
+            
+                    
+                    Nodejs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.11" data-path="../web前端面试-面试官系列/NodeJS/paging.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/paging.html">
+            
+                    
+                    Paging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.12" data-path="../web前端面试-面试官系列/NodeJS/performance.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.13" data-path="../web前端面试-面试官系列/NodeJS/process.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/process.html">
+            
+                    
+                    Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14" data-path="../web前端面试-面试官系列/NodeJS/require_order.html">
+            
+                <a href="../web前端面试-面试官系列/NodeJS/require_order.html">
+            
+                    
+                    Require Order
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    Css
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../web前端面试-面试官系列/css/BFC.html">
+            
+                <a href="../web前端面试-面试官系列/css/BFC.html">
+            
+                    
+                    BFC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../web前端面试-面试官系列/css/animation.html">
+            
+                <a href="../web前端面试-面试官系列/css/animation.html">
+            
+                    
+                    Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../web前端面试-面试官系列/css/box.html">
+            
+                <a href="../web前端面试-面试官系列/css/box.html">
+            
+                    
+                    Box
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.4" data-path="../web前端面试-面试官系列/css/center.html">
+            
+                <a href="../web前端面试-面试官系列/css/center.html">
+            
+                    
+                    Center
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.5" data-path="../web前端面试-面试官系列/css/column_layout.html">
+            
+                <a href="../web前端面试-面试官系列/css/column_layout.html">
+            
+                    
+                    Column Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.6" data-path="../web前端面试-面试官系列/css/css3_features.html">
+            
+                <a href="../web前端面试-面试官系列/css/css3_features.html">
+            
+                    
+                    Css3 Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.7" data-path="../web前端面试-面试官系列/css/css_performance.html">
+            
+                <a href="../web前端面试-面试官系列/css/css_performance.html">
+            
+                    
+                    Css Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.8" data-path="../web前端面试-面试官系列/css/dp_px_dpr_ppi.html">
+            
+                <a href="../web前端面试-面试官系列/css/dp_px_dpr_ppi.html">
+            
+                    
+                    Dp Px Dpr Ppi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.9" data-path="../web前端面试-面试官系列/css/em_px_rem_vh_vw.html">
+            
+                <a href="../web前端面试-面试官系列/css/em_px_rem_vh_vw.html">
+            
+                    
+                    Em Px Rem Vh Vw
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.10" data-path="../web前端面试-面试官系列/css/flexbox.html">
+            
+                <a href="../web前端面试-面试官系列/css/flexbox.html">
+            
+                    
+                    Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.11" data-path="../web前端面试-面试官系列/css/grid.html">
+            
+                <a href="../web前端面试-面试官系列/css/grid.html">
+            
+                    
+                    Grid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12" data-path="../web前端面试-面试官系列/css/hide_attributes.html">
+            
+                <a href="../web前端面试-面试官系列/css/hide_attributes.html">
+            
+                    
+                    Hide Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.13" data-path="../web前端面试-面试官系列/css/layout_painting.html">
+            
+                <a href="../web前端面试-面试官系列/css/layout_painting.html">
+            
+                    
+                    Layout Painting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.14" data-path="../web前端面试-面试官系列/css/less_12px.html">
+            
+                <a href="../web前端面试-面试官系列/css/less_12px.html">
+            
+                    
+                    Less 12px
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.15" data-path="../web前端面试-面试官系列/css/responsive_layout.html">
+            
+                <a href="../web前端面试-面试官系列/css/responsive_layout.html">
+            
+                    
+                    Responsive Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.16" data-path="../web前端面试-面试官系列/css/sass_less_stylus.html">
+            
+                <a href="../web前端面试-面试官系列/css/sass_less_stylus.html">
+            
+                    
+                    Sass Less Stylus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.17" data-path="../web前端面试-面试官系列/css/selector.html">
+            
+                <a href="../web前端面试-面试官系列/css/selector.html">
+            
+                    
+                    Selector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.18" data-path="../web前端面试-面试官系列/css/single_multi_line.html">
+            
+                <a href="../web前端面试-面试官系列/css/single_multi_line.html">
+            
+                    
+                    Single Multi Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.19" data-path="../web前端面试-面试官系列/css/triangle.html">
+            
+                <a href="../web前端面试-面试官系列/css/triangle.html">
+            
+                    
+                    Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.20" data-path="../web前端面试-面试官系列/css/visual_scrolling.html">
+            
+                <a href="../web前端面试-面试官系列/css/visual_scrolling.html">
+            
+                    
+                    Visual Scrolling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    Es6
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../web前端面试-面试官系列/es6/array.html">
+            
+                <a href="../web前端面试-面试官系列/es6/array.html">
+            
+                    
+                    Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../web前端面试-面试官系列/es6/decorator.html">
+            
+                <a href="../web前端面试-面试官系列/es6/decorator.html">
+            
+                    
+                    Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.3" data-path="../web前端面试-面试官系列/es6/function.html">
+            
+                <a href="../web前端面试-面试官系列/es6/function.html">
+            
+                    
+                    Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.4" data-path="../web前端面试-面试官系列/es6/generator.html">
+            
+                <a href="../web前端面试-面试官系列/es6/generator.html">
+            
+                    
+                    Generator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.5" data-path="../web前端面试-面试官系列/es6/module.html">
+            
+                <a href="../web前端面试-面试官系列/es6/module.html">
+            
+                    
+                    Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.6" data-path="../web前端面试-面试官系列/es6/object.html">
+            
+                <a href="../web前端面试-面试官系列/es6/object.html">
+            
+                    
+                    Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.7" data-path="../web前端面试-面试官系列/es6/promise.html">
+            
+                <a href="../web前端面试-面试官系列/es6/promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.8" data-path="../web前端面试-面试官系列/es6/proxy.html">
+            
+                <a href="../web前端面试-面试官系列/es6/proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.9" data-path="../web前端面试-面试官系列/es6/set_map.html">
+            
+                <a href="../web前端面试-面试官系列/es6/set_map.html">
+            
+                    
+                    Set Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.10" data-path="../web前端面试-面试官系列/es6/var_let_const.html">
+            
+                <a href="../web前端面试-面试官系列/es6/var_let_const.html">
+            
+                    
+                    Var Let Const
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    Vue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../web前端面试-面试官系列/vue/404.html">
+            
+                <a href="../web前端面试-面试官系列/vue/404.html">
+            
+                    
+                    404
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../web前端面试-面试官系列/vue/axios.html">
+            
+                <a href="../web前端面试-面试官系列/vue/axios.html">
+            
+                    
+                    Axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../web前端面试-面试官系列/vue/axiosCode.html">
+            
+                <a href="../web前端面试-面试官系列/vue/axiosCode.html">
+            
+                    
+                    AxiosCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../web前端面试-面试官系列/vue/bind.html">
+            
+                <a href="../web前端面试-面试官系列/vue/bind.html">
+            
+                    
+                    Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.5" data-path="../web前端面试-面试官系列/vue/communication.html">
+            
+                <a href="../web前端面试-面试官系列/vue/communication.html">
+            
+                    
+                    Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.6" data-path="../web前端面试-面试官系列/vue/components_plugin.html">
+            
+                <a href="../web前端面试-面试官系列/vue/components_plugin.html">
+            
+                    
+                    Components Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.7" data-path="../web前端面试-面试官系列/vue/cors.html">
+            
+                <a href="../web前端面试-面试官系列/vue/cors.html">
+            
+                    
+                    Cors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.8" data-path="../web前端面试-面试官系列/vue/data.html">
+            
+                <a href="../web前端面试-面试官系列/vue/data.html">
+            
+                    
+                    Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.9" data-path="../web前端面试-面试官系列/vue/data_object_add_attrs.html">
+            
+                <a href="../web前端面试-面试官系列/vue/data_object_add_attrs.html">
+            
+                    
+                    Data Object Add Attrs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.10" data-path="../web前端面试-面试官系列/vue/diff.html">
+            
+                <a href="../web前端面试-面试官系列/vue/diff.html">
+            
+                    
+                    Diff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.11" data-path="../web前端面试-面试官系列/vue/directive.html">
+            
+                <a href="../web前端面试-面试官系列/vue/directive.html">
+            
+                    
+                    Directive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.12" data-path="../web前端面试-面试官系列/vue/error.html">
+            
+                <a href="../web前端面试-面试官系列/vue/error.html">
+            
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.13" data-path="../web前端面试-面试官系列/vue/filter.html">
+            
+                <a href="../web前端面试-面试官系列/vue/filter.html">
+            
+                    
+                    Filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.14" data-path="../web前端面试-面试官系列/vue/first_page_time.html">
+            
+                <a href="../web前端面试-面试官系列/vue/first_page_time.html">
+            
+                    
+                    First Page Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.15" data-path="../web前端面试-面试官系列/vue/if_for.html">
+            
+                <a href="../web前端面试-面试官系列/vue/if_for.html">
+            
+                    
+                    If For
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.16" data-path="../web前端面试-面试官系列/vue/keepalive.html">
+            
+                <a href="../web前端面试-面试官系列/vue/keepalive.html">
+            
+                    
+                    Keepalive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.17" data-path="../web前端面试-面试官系列/vue/key.html">
+            
+                <a href="../web前端面试-面试官系列/vue/key.html">
+            
+                    
+                    Key
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.18" data-path="../web前端面试-面试官系列/vue/lifecycle.html">
+            
+                <a href="../web前端面试-面试官系列/vue/lifecycle.html">
+            
+                    
+                    Lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.19" data-path="../web前端面试-面试官系列/vue/mixin.html">
+            
+                <a href="../web前端面试-面试官系列/vue/mixin.html">
+            
+                    
+                    Mixin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.20" data-path="../web前端面试-面试官系列/vue/modifier.html">
+            
+                <a href="../web前端面试-面试官系列/vue/modifier.html">
+            
+                    
+                    Modifier
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.21" data-path="../web前端面试-面试官系列/vue/new_vue.html">
+            
+                <a href="../web前端面试-面试官系列/vue/new_vue.html">
+            
+                    
+                    New Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.22" data-path="../web前端面试-面试官系列/vue/nexttick.html">
+            
+                <a href="../web前端面试-面试官系列/vue/nexttick.html">
+            
+                    
+                    Nexttick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.23" data-path="../web前端面试-面试官系列/vue/observable.html">
+            
+                <a href="../web前端面试-面试官系列/vue/observable.html">
+            
+                    
+                    Observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.24" data-path="../web前端面试-面试官系列/vue/permission.html">
+            
+                <a href="../web前端面试-面试官系列/vue/permission.html">
+            
+                    
+                    Permission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.25" data-path="../web前端面试-面试官系列/vue/show_if.html">
+            
+                <a href="../web前端面试-面试官系列/vue/show_if.html">
+            
+                    
+                    Show If
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.26" data-path="../web前端面试-面试官系列/vue/slot.html">
+            
+                <a href="../web前端面试-面试官系列/vue/slot.html">
+            
+                    
+                    Slot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.27" data-path="../web前端面试-面试官系列/vue/spa.html">
+            
+                <a href="../web前端面试-面试官系列/vue/spa.html">
+            
+                    
+                    Spa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.28" data-path="../web前端面试-面试官系列/vue/ssr.html">
+            
+                <a href="../web前端面试-面试官系列/vue/ssr.html">
+            
+                    
+                    Ssr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.29" data-path="../web前端面试-面试官系列/vue/structure.html">
+            
+                <a href="../web前端面试-面试官系列/vue/structure.html">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.30" data-path="../web前端面试-面试官系列/vue/vnode.html">
+            
+                <a href="../web前端面试-面试官系列/vue/vnode.html">
+            
+                    
+                    Vnode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.31" data-path="../web前端面试-面试官系列/vue/vue.html">
+            
+                <a href="../web前端面试-面试官系列/vue/vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.32" data-path="../web前端面试-面试官系列/vue/vue3_vue2.html">
+            
+                <a href="../web前端面试-面试官系列/vue/vue3_vue2.html">
+            
+                    
+                    Vue3 Vue2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    Webpack
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../web前端面试-面试官系列/webpack/HMR.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/HMR.html">
+            
+                    
+                    HMR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.2" data-path="../web前端面试-面试官系列/webpack/Loader.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/Loader.html">
+            
+                    
+                    Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.3" data-path="../web前端面试-面试官系列/webpack/Loader_Plugin.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/Loader_Plugin.html">
+            
+                    
+                    Loader Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.4" data-path="../web前端面试-面试官系列/webpack/Plugin.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/Plugin.html">
+            
+                    
+                    Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.5" data-path="../web前端面试-面试官系列/webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                    
+                    Rollup Parcel Snowpack Vite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.6" data-path="../web前端面试-面试官系列/webpack/build_process.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/build_process.html">
+            
+                    
+                    Build Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.7" data-path="../web前端面试-面试官系列/webpack/improve_build.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/improve_build.html">
+            
+                    
+                    Improve Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.8" data-path="../web前端面试-面试官系列/webpack/performance.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.9" data-path="../web前端面试-面试官系列/webpack/proxy.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.10" data-path="../web前端面试-面试官系列/webpack/webpack.html">
+            
+                <a href="../web前端面试-面试官系列/webpack/webpack.html">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">随笔</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Idea
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../随笔/idea/windows用mklink转移c盘文件.html">
+            
+                <a href="../../随笔/idea/windows用mklink转移c盘文件.html">
+            
+                    
+                    Windows用Mklink转移C盘文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../随笔/idea/书单.html">
+            
+                <a href="../../随笔/idea/书单.html">
+            
+                    
+                    书单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../随笔/idea/你在高中做过最疯狂的事情是什么？ - 知乎.html">
+            
+                <a href="../../随笔/idea/你在高中做过最疯狂的事情是什么？ - 知乎.html">
+            
+                    
+                    你在高中做过最疯狂的事情是什么？   知乎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../随笔/idea/想法.html">
+            
+                <a href="../../随笔/idea/想法.html">
+            
+                    
+                    想法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../随笔/idea/拉件关系的36个问题.html">
+            
+                <a href="../../随笔/idea/拉件关系的36个问题.html">
+            
+                    
+                    拉件关系的36个问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../随笔/idea/收藏链接.html">
+            
+                <a href="../../随笔/idea/收藏链接.html">
+            
+                    
+                    收藏链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../随笔/idea/普鲁斯特问卷.html">
+            
+                <a href="../../随笔/idea/普鲁斯特问卷.html">
+            
+                    
+                    普鲁斯特问卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../随笔/idea/阿里巴巴又出事！服从性测试？别！他们只想把你变成奴隶！_哔哩哔哩_bilibili.html">
+            
+                <a href="../../随笔/idea/阿里巴巴又出事！服从性测试？别！他们只想把你变成奴隶！_哔哩哔哩_bilibili.html">
+            
+                    
+                    阿里巴巴又出事！服从性测试？别！他们只想把你变成奴隶！ 哔哩哔哩 Bilibili
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    摘抄
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../随笔/摘抄/不要温和地走进那良夜，.html">
+            
+                <a href="../../随笔/摘抄/不要温和地走进那良夜，.html">
+            
+                    
+                    不要温和地走进那良夜，
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../随笔/摘抄/仿生人会梦见电子羊吗评论摘抄.html">
+            
+                <a href="../../随笔/摘抄/仿生人会梦见电子羊吗评论摘抄.html">
+            
+                    
+                    仿生人会梦见电子羊吗评论摘抄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../随笔/摘抄/在银河系的第三旋臂边缘一颗蓝色行星上碳基生物正在庆祝他们所在的行星.html">
+            
+                <a href="../../随笔/摘抄/在银河系的第三旋臂边缘一颗蓝色行星上碳基生物正在庆祝他们所在的行星.html">
+            
+                    
+                    在银河系的第三旋臂边缘一颗蓝色行星上碳基生物正在庆祝他们所在的行星
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../随笔/摘抄/性格内向的人如何锻炼社交能力？ - 知乎.html">
+            
+                <a href="../../随笔/摘抄/性格内向的人如何锻炼社交能力？ - 知乎.html">
+            
+                    
+                    性格内向的人如何锻炼社交能力？   知乎
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >JavaScript异步机制详解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#javascript&#x5F02;&#x6B65;&#x673A;&#x5236;&#x8BE6;&#x89E3;"><b></b>JavaScript&#x5F02;&#x6B65;&#x673A;&#x5236;&#x8BE6;&#x89E3;</a></li><li><span class="title-icon "></span><a href="#&#x4E00;&#x3001;&#x540C;&#x6B65;&#x4E0E;&#x5F02;&#x6B65;"><b></b>&#x4E00;&#x3001;&#x540C;&#x6B65;&#x4E0E;&#x5F02;&#x6B65;</a></li><ul><li><span class="title-icon "></span><a href="#&#x540C;&#x6B65;"><b></b>&#x540C;&#x6B65;</a></li><li><span class="title-icon "></span><a href="#&#x5F02;&#x6B65;"><b></b>&#x5F02;&#x6B65;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E8C;&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;"><b></b>&#x4E8C;&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6D4F;&#x89C8;&#x5668;"><b></b>&#x6D4F;&#x89C8;&#x5668;</a></li><li><span class="title-icon "></span><a href="#js&#x5F15;&#x64CE;"><b></b>JS&#x5F15;&#x64CE;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E09;&#x3001;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E0E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;"><b></b>&#x4E09;&#x3001;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E0E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;</a></li><li><span class="title-icon "></span><a href="#&#x56DB;&#x3001;&#x793A;&#x4F8B;"><b></b>&#x56DB;&#x3001;&#x793A;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#javascript&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x4E0E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;"><b></b>JavaScript&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x4E0E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="javascript&#x5F02;&#x6B65;&#x673A;&#x5236;&#x8BE6;&#x89E3;"><a name="javascript&#x5F02;&#x6B65;&#x673A;&#x5236;&#x8BE6;&#x89E3;" class="anchor-navigation-ex-anchor" href="#javascript&#x5F02;&#x6B65;&#x673A;&#x5236;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScript&#x5F02;&#x6B65;&#x673A;&#x5236;&#x8BE6;&#x89E3;</h2>
+<p><a href="https://www.jianshu.com/u/0fa6f5d09040" target="_blank"><a href="https://gitee.com/herrry/image-repository/raw/master/img/202203141616124.jpg" data-lightbox="eb8c2bee-c60c-47d7-ab45-ff24f17e60c3" data-title="undefined" target="_blank"><img src="https://gitee.com/herrry/image-repository/raw/master/img/202203141616124.jpg" alt="undefined"></a></a></p>
+<p>0.6442018.01.26 15:03:06&#x5B57;&#x6570; 2,397&#x9605;&#x8BFB; 4,323</p>
+<blockquote>
+<p>&#x5B66;&#x4E60;JavaScript&#x7684;&#x65F6;&#x5019;&#x4E86;&#x89E3;&#x5230;JavaScript&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#xFF0C;&#x521A;&#x5F00;&#x59CB;&#x5F88;&#x7591;&#x60D1;&#xFF0C;&#x5355;&#x7EBF;&#x7A0B;&#x600E;&#x4E48;&#x5904;&#x7406;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x3001;&#x6587;&#x4EF6;&#x8BFB;&#x5199;&#x7B49;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#x5462;&#xFF1F;&#x6548;&#x7387;&#x5C82;&#x4E0D;&#x662F;&#x4F1A;&#x5F88;&#x4F4E;&#xFF1F;&#x968F;&#x7740;&#x5BF9;&#x8FD9;&#x65B9;&#x9762;&#x5185;&#x5BB9;&#x7684;&#x4E86;&#x89E3;&#x548C;&#x6DF1;&#x5165;&#xFF0C;&#x77E5;&#x9053;&#x4E86;&#x5176;&#x4E2D;&#x7684;&#x5965;&#x79D8;&#x3002;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x5C31;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;JavaScript&#x600E;&#x4E48;&#x5904;&#x7406;&#x5F02;&#x6B65;&#x95EE;&#x9898;&#x3002;</p>
+</blockquote>
+<h2 id="&#x4E00;&#x3001;&#x540C;&#x6B65;&#x4E0E;&#x5F02;&#x6B65;"><a name="&#x4E00;&#x3001;&#x540C;&#x6B65;&#x4E0E;&#x5F02;&#x6B65;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;&#x540C;&#x6B65;&#x4E0E;&#x5F02;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;&#x540C;&#x6B65;&#x4E0E;&#x5F02;&#x6B65;</h2>
+<p>&#x5728;&#x4ECB;&#x7ECD;JavaScript&#x7684;&#x5F02;&#x6B65;&#x673A;&#x5236;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#xFF1A;&#x4EC0;&#x4E48;&#x662F;&#x540C;&#x6B65;&#xFF1F;&#x4EC0;&#x4E48;&#x662F;&#x5F02;&#x6B65;&#xFF1F;</p>
+<p><a href="https://upload-images.jianshu.io/upload_images/3985563-bbc80847ea8e5755.png?imageMogr2/auto-orient/strip|imageView2/2/w/640/format/webp" data-lightbox="940cb799-4e4f-4fef-a312-6395fd7d1add" data-title="" target="_blank"><img src="https://upload-images.jianshu.io/upload_images/3985563-bbc80847ea8e5755.png?imageMogr2/auto-orient/strip|imageView2/2/w/640/format/webp" alt=""></a></p>
+<h3 id="&#x540C;&#x6B65;"><a name="&#x540C;&#x6B65;" class="anchor-navigation-ex-anchor" href="#&#x540C;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x540C;&#x6B65;</h3>
+<p>&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x5C31;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x9884;&#x671F;&#x7ED3;&#x679C;(&#x5373;&#x62FF;&#x5230;&#x4E86;&#x9884;&#x671F;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x6216;&#x8005;&#x770B;&#x5230;&#x4E86;&#x9884;&#x671F;&#x7684;&#x6548;&#x679C;)&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x540C;&#x6B65;&#x7684;&#x3002;
+&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>//&#x5728;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x65F6;&#xFF0C;&#x83B7;&#x5F97;&#x4E86;&#x9884;&#x671F;&#x503C;&#xFF0C;&#x5373;2&#x7684;&#x5E73;&#x65B9;&#x6839;
+Math.sqrt(2);
+//&#x5728;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x65F6;&#xFF0C;&#x83B7;&#x5F97;&#x4E86;&#x9884;&#x671F;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x5373;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x4E0A;&#x6253;&#x5370;&#x4E86;&apos;hello&apos;
+console.log(&apos;hello&apos;);
+</code></pre><p>&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x540C;&#x6B65;&#x7684;&#x3002;</p>
+<p><strong>&#x5982;&#x679C;&#x51FD;&#x6570;&#x662F;&#x540C;&#x6B65;&#x7684;&#xFF0C;&#x5373;&#x4F7F;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x6BD4;&#x8F83;&#x8017;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x4E00;&#x76F4;&#x7B49;&#x5F85;&#x76F4;&#x5230;&#x5F97;&#x5230;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x3002;</strong></p>
+<h3 id="&#x5F02;&#x6B65;"><a name="&#x5F02;&#x6B65;" class="anchor-navigation-ex-anchor" href="#&#x5F02;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F02;&#x6B65;</h3>
+<p>&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x8FD8;&#x4E0D;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x9884;&#x671F;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x662F;&#x9700;&#x8981;&#x5728;&#x5C06;&#x6765;&#x901A;&#x8FC7;&#x4E00;&#x5B9A;&#x7684;&#x624B;&#x6BB5;&#x5F97;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x3002;
+&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>//&#x8BFB;&#x53D6;&#x6587;&#x4EF6;
+fs.readFile(&apos;hello.txt&apos;, &apos;utf8&apos;, function(err, data) {
+    console.log(data);
+});
+//&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = xxx; // &#x6DFB;&#x52A0;&#x56DE;&#x8C03;&#x51FD;&#x6570;
+xhr.open(&apos;GET&apos;, url);
+xhr.send(); // &#x53D1;&#x8D77;&#x51FD;&#x6570;
+</code></pre><p>&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x4E2D;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x51FD;&#x6570; <code>readFile</code>&#x548C;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x53D1;&#x8D77;&#x51FD;&#x6570; <code>send</code>&#x90FD;&#x5C06;&#x6267;&#x884C;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x867D;&#x7136;&#x51FD;&#x6570;&#x4F1A;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x7ACB;&#x523B;&#x83B7;&#x53D6;&#x9884;&#x671F;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x4E3A;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#x4EA4;&#x7ED9;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x6682;&#x65F6;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x9884;&#x671F;&#x7ED3;&#x679C;&#xFF08;&#x540E;&#x9762;&#x4ECB;&#x7ECD;&#xFF09;&#x3002;&#x800C;&#x5728;JavaScript&#x4E2D;&#x901A;&#x8FC7;&#x56DE;&#x8C03;&#x51FD;&#x6570; <code>function(err, data) { console.log(data); }</code>&#x548C; <code>onreadystatechange</code> &#xFF0C;&#x5728;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#x628A;&#x76F8;&#x5E94;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x77E5;&#x6267;&#x884C;JavaScript&#x4EE3;&#x7801;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x56DE;&#x8C03;&#x3002;</p>
+<p><strong>&#x5982;&#x679C;&#x51FD;&#x6570;&#x662F;&#x5F02;&#x6B65;&#x7684;&#xFF0C;&#x53D1;&#x51FA;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x9A6C;&#x4E0A;&#x8FD4;&#x56DE;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4F1A;&#x9A6C;&#x4E0A;&#x8FD4;&#x56DE;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x3002;&#x8C03;&#x7528;&#x8005;&#x4E0D;&#x5FC5;&#x4E3B;&#x52A8;&#x7B49;&#x5F85;&#xFF0C;&#x5F53;&#x88AB;&#x8C03;&#x7528;&#x8005;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#x4E4B;&#x540E;&#x4F1A;&#x901A;&#x8FC7;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E3B;&#x52A8;&#x901A;&#x77E5;&#x8C03;&#x7528;&#x8005;&#x3002;</strong></p>
+<h2 id="&#x4E8C;&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;"><a name="&#x4E8C;&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;</h2>
+<p><a href="https://gitee.com/herrry/image-repository/raw/master/img/202203141616125.png" data-lightbox="49b9a11e-4227-4ef9-a79d-92e10ef5fc17" data-title="" target="_blank"><img src="https://gitee.com/herrry/image-repository/raw/master/img/202203141616125.png" alt=""></a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x5F02;&#x6B65;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C31;&#x53EF;&#x80FD;&#x4F1A;&#x7EB3;&#x95F7;&#xFF1A;&#x65E2;&#x7136;JavaScript&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#xFF0C;&#x600E;&#x4E48;&#x8FD8;&#x5B58;&#x5728;&#x5F02;&#x6B65;&#xFF0C;&#x90A3;&#x4E9B;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#x5230;&#x5E95;&#x4EA4;&#x7ED9;&#x8C01;&#x53BB;&#x6267;&#x884C;&#x4E86;&#xFF1F;</p>
+<p>JavaScript&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x95E8;&#x8BED;&#x8A00;&#xFF0C;&#x8BF4;&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x8FD8;&#x662F;&#x591A;&#x7EBF;&#x7A0B;&#x5F97;&#x7ED3;&#x5408;&#x5177;&#x4F53;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x3002;JS&#x7684;&#x8FD0;&#x884C;&#x901A;&#x5E38;&#x662F;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x5177;&#x4F53;&#x7531;JS&#x5F15;&#x64CE;&#x53BB;&#x89E3;&#x6790;&#x548C;&#x8FD0;&#x884C;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x5177;&#x4F53;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x6D4F;&#x89C8;&#x5668;&#x3002;</p>
+<h3 id="&#x6D4F;&#x89C8;&#x5668;"><a name="&#x6D4F;&#x89C8;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x6D4F;&#x89C8;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D4F;&#x89C8;&#x5668;</h3>
+<p>&#x76EE;&#x524D;&#x6700;&#x4E3A;&#x6D41;&#x884C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E3A;&#xFF1A;Chrome&#xFF0C;IE&#xFF0C;Safari&#xFF0C;FireFox&#xFF0C;Opera&#x3002;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5185;&#x6838;&#x662F;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#x901A;&#x5E38;&#x7531;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x5E38;&#x9A7B;&#x7684;&#x7EBF;&#x7A0B;&#xFF1A;</p>
+<ul>
+<li>&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#xFF1A;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x8BE5;&#x7EBF;&#x7A0B;&#x8D1F;&#x8D23;&#x9875;&#x9762;&#x7684;&#x6E32;&#x67D3;</li>
+<li>JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#xFF1A;&#x8D1F;&#x8D23;JS&#x7684;&#x89E3;&#x6790;&#x548C;&#x6267;&#x884C;</li>
+<li>&#x5B9A;&#x65F6;&#x89E6;&#x53D1;&#x5668;&#x7EBF;&#x7A0B;&#xFF1A;&#x5904;&#x7406;&#x5B9A;&#x65F6;&#x4E8B;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;setTimeout, setInterval</li>
+<li>&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x7EBF;&#x7A0B;&#xFF1A;&#x5904;&#x7406;DOM&#x4E8B;&#x4EF6;</li>
+<li>&#x5F02;&#x6B65;http&#x8BF7;&#x6C42;&#x7EBF;&#x7A0B;&#xFF1A;&#x5904;&#x7406;http&#x8BF7;&#x6C42;</li>
+</ul>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x6E32;&#x67D3;&#x7EBF;&#x7A0B;&#x548C;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x662F;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x7684;&#x3002;&#x6E32;&#x67D3;&#x7EBF;&#x7A0B;&#x5728;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x7684;&#x65F6;&#x5019;&#xFF0C;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x4F1A;&#x88AB;&#x6302;&#x8D77;&#x3002;&#x56E0;&#x4E3A;JS&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;DOM&#xFF0C;&#x82E5;&#x5728;&#x6E32;&#x67D3;&#x4E2D;JS&#x5904;&#x7406;&#x4E86;DOM&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x80FD;&#x5C31;&#x4E0D;&#x77E5;&#x6240;&#x63AA;&#x4E86;&#x3002;</p>
+<h3 id="js&#x5F15;&#x64CE;"><a name="js&#x5F15;&#x64CE;" class="anchor-navigation-ex-anchor" href="#js&#x5F15;&#x64CE;"><i class="fa fa-link" aria-hidden="true"></i></a>JS&#x5F15;&#x64CE;</h3>
+<p>&#x901A;&#x5E38;&#x8BB2;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x8BF4;&#x5230;&#x4E24;&#x4E2A;&#x5F15;&#x64CE;&#xFF1A;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x548C;JS&#x5F15;&#x64CE;&#x3002;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x6E32;&#x67D3;&#x9875;&#x9762;&#xFF0C;Chrome&#xFF0F;Safari&#xFF0F;Opera&#x7528;&#x7684;&#x662F;Webkit&#x5F15;&#x64CE;&#xFF0C;IE&#x7528;&#x7684;&#x662F;Trident&#x5F15;&#x64CE;&#xFF0C;FireFox&#x7528;&#x7684;&#x662F;Gecko&#x5F15;&#x64CE;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x5F15;&#x64CE;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x6837;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5C31;&#x5BFC;&#x81F4;&#x4E86;&#x7ECF;&#x5E38;&#x88AB;&#x4EBA;&#x8BDF;&#x75C5;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x6837;&#x5F0F;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x505A;&#x5177;&#x4F53;&#x8BA8;&#x8BBA;&#x3002;</p>
+<p>JS&#x5F15;&#x64CE;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;JS&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8D1F;&#x8D23;JS&#x4EE3;&#x7801;&#x7684;&#x89E3;&#x6790;&#x548C;&#x6267;&#x884C;&#x3002;&#x901A;&#x5E38;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li>&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#xFF1A;&#x5C06;&#x6E90;&#x4EE3;&#x7801;&#x5206;&#x89E3;&#x4E3A;&#x6709;&#x610F;&#x4E49;&#x7684;&#x5206;&#x8BCD;</li>
+<li>&#x8BED;&#x6CD5;&#x5206;&#x6790;&#xFF1A;&#x7528;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x5C06;&#x5206;&#x8BCD;&#x89E3;&#x6790;&#x6210;&#x8BED;&#x6CD5;&#x6811;</li>
+<li>&#x4EE3;&#x7801;&#x751F;&#x6210;&#xFF1A;&#x751F;&#x6210;&#x673A;&#x5668;&#x80FD;&#x8FD0;&#x884C;&#x7684;&#x4EE3;&#x7801;</li>
+<li>&#x4EE3;&#x7801;&#x6267;&#x884C;</li>
+</ul>
+<p>&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x7684;JS&#x5F15;&#x64CE;&#x4E5F;&#x5404;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;Chrome&#x7528;&#x7684;&#x662F;V8&#xFF0C;FireFox&#x7528;&#x7684;&#x662F;SpiderMonkey&#xFF0C;Safari&#x7528;&#x7684;&#x662F;JavaScriptCore&#xFF0C;IE&#x7528;&#x7684;&#x662F;Chakra&#x3002;</p>
+<p>&#x4E4B;&#x6240;&#x4EE5;&#x8BF4;JavaScript&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#xFF0C;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x53EA;&#x5F00;&#x542F;&#x4E86;&#x4E00;&#x4E2A;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x6765;&#x89E3;&#x6790;&#x548C;&#x6267;&#x884C;JS&#x3002;&#x90A3;&#x4E3A;&#x4EC0;&#x4E48;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5F15;&#x64CE;&#x5462;&#xFF1F;&#x5982;&#x679C;&#x540C;&#x65F6;&#x6709;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x53BB;&#x64CD;&#x4F5C;DOM&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x4E0D;&#x662F;&#x53C8;&#x8981;&#x4E0D;&#x77E5;&#x6240;&#x63AA;&#x4E86;&#x3002;</p>
+<p><strong>&#x6240;&#x4EE5;&#xFF0C;&#x867D;&#x7136;JavaScript&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#xFF0C;&#x53EF;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x90E8;&#x4E0D;&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x3002;&#x4E00;&#x4E9B;I/O&#x64CD;&#x4F5C;&#x3001;&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x8BA1;&#x65F6;&#x548C;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF08;click, keydown...&#xFF09;&#x7B49;&#x90FD;&#x662F;&#x7531;&#x6D4F;&#x89C8;&#x5668;&#x63D0;&#x4F9B;&#x7684;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;</strong></p>
+<h2 id="&#x4E09;&#x3001;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E0E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;"><a name="&#x4E09;&#x3001;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E0E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E0E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E0E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;</h2>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x4E86;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x5176;&#x5B9E;JavaScript&#x4E5F;&#x662F;&#x901A;&#x8FC7;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4EA4;&#x4E92;&#x534F;&#x4F5C;&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x3002;&#x4F46;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5177;&#x4F53;&#x4F55;&#x65F6;&#x52A0;&#x5165;&#x5230;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#xFF1F;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#x600E;&#x4E48;&#x6837;&#x7684;&#xFF1F;</p>
+<p>&#x8FD9;&#x4E00;&#x5207;&#x7684;&#x89E3;&#x91CA;&#x5C31;&#x9700;&#x8981;&#x7EE7;&#x7EED;&#x4E86;&#x89E3;&#x6D88;&#x606F;&#x961F;&#x5217;&#x548C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x3002;</p>
+<p><a href="https://gitee.com/herrry/image-repository/raw/master/img/202203141616126.png" data-lightbox="a0cff5b0-3293-4246-88a5-84dd7c115bd2" data-title="" target="_blank"><img src="https://gitee.com/herrry/image-repository/raw/master/img/202203141616126.png" alt=""></a></p>
+<p>&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5DE6;&#x8FB9;&#x7684;&#x6808;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x662F;&#x90A3;&#x4E9B;&#x80FD;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x3001;&#x4E0D;&#x8017;&#x65F6;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5982;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x7B49;&#x7B49;&#x90A3;&#x4E9B;&#x4E0D;&#x9700;&#x8981;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x53EF;&#x5F52;&#x4E3A;&#x8FD9;&#x4E00;&#x7C7B;&#x3002;</p>
+<p>&#x53F3;&#x8FB9;&#x7684;&#x5806;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x3001;&#x5BF9;&#x8C61;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x961F;&#x5217;&#x5C31;&#x662F;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x4E00;&#x65E6;&#x67D0;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x6709;&#x4E86;&#x54CD;&#x5E94;&#x5C31;&#x4F1A;&#x88AB;&#x63A8;&#x5165;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x5982;&#x7528;&#x6237;&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x3001;&#x6D4F;&#x89C8;&#x5668;&#x6536;&#x5230;&#x670D;&#x52A1;&#x7684;&#x54CD;&#x5E94;&#x548C;setTimeout&#x4E2D;&#x5F85;&#x6267;&#x884C;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x90FD;&#x548C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x76F8;&#x5173;&#x8054;&#x3002;</p>
+<p>JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x7528;&#x6765;&#x6267;&#x884C;&#x6808;&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#xFF0C;&#x5F53;&#x6240;&#x6709;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x6808;&#x88AB;&#x6E05;&#x7A7A;&#xFF0C;&#x7136;&#x540E;&#x8BFB;&#x53D6;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5F85;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x628A;&#x76F8;&#x5173;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x538B;&#x5165;&#x6808;&#x4E2D;&#xFF0C;&#x5355;&#x7EBF;&#x7A0B;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x65B0;&#x7684;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x4ECE;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x8BFB;&#x53D6;&#x4EFB;&#x52A1;&#x662F;&#x4E0D;&#x65AD;&#x5FAA;&#x73AF;&#x7684;&#xFF0C;&#x6BCF;&#x6B21;&#x6808;&#x88AB;&#x6E05;&#x7A7A;&#x540E;&#xFF0C;&#x90FD;&#x4F1A;&#x5728;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x8BFB;&#x53D6;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x4F1A;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x5230;&#x6709;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x5C31;&#x53EB;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x3002;</p>
+<p><a href="https://gitee.com/herrry/image-repository/raw/master/img/202203141616127.png" data-lightbox="4360691a-db27-4c2a-a9e9-640f64d25544" data-title="" target="_blank"><img src="https://gitee.com/herrry/image-repository/raw/master/img/202203141616127.png" alt=""></a></p>
+<p>&#x4E0A;&#x56FE;&#x4EE5;AJAX&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x4E3A;&#x4F8B;&#xFF0C;&#x53D1;&#x8D77;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x540E;&#xFF0C;&#x7531;AJAX&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x8017;&#x65F6;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5806;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#xFF0C;&#x76F4;&#x5230;&#x5806;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4ECE;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x4F9D;&#x6B21;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x53D6;&#x51FA;&#x6D88;&#x606F;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x5728;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x90A3;&#x4E48;AJAX&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x5728;&#x67D0;&#x4E00;&#x65F6;&#x523B;&#x88AB;&#x8C03;&#x7528;&#x6267;&#x884C;&#x3002;</p>
+<h2 id="&#x56DB;&#x3001;&#x793A;&#x4F8B;"><a name="&#x56DB;&#x3001;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x793A;&#x4F8B;</h2>
+<p>&#x5F15;&#x7528;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x8003;&#x5BDF;JavaScript&#x5F02;&#x6B65;&#x673A;&#x5236;&#x7684;&#x9762;&#x8BD5;&#x9898;&#x6765;&#x5177;&#x4F53;&#x4ECB;&#x7ECD;&#x3002;</p>
+<blockquote>
+<p>&#x6267;&#x884C;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x5728; 5s &#x5185;&#x70B9;&#x51FB;&#x4E24;&#x4E0B;&#xFF0C;&#x8FC7;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF08;&gt;5s&#xFF09;&#x540E;&#xFF0C;&#x518D;&#x70B9;&#x51FB;&#x4E24;&#x4E0B;&#xFF0C;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+</blockquote>
+<pre class="language-"><code>setTimeout(function(){
+    for(var i = 0; i &lt; 100000000; i++){}
+    console.log(&apos;timer a&apos;);
+}, 0)
+
+for(var j = 0; j &lt; 5; j++){
+    console.log(j);
+}
+
+setTimeout(function(){
+    console.log(&apos;timer b&apos;);
+}, 0)
+
+function waitFiveSeconds(){
+    var now = (new Date()).getTime();
+    while(((new Date()).getTime() - now) &lt; 5000){}
+    console.log(&apos;finished waiting&apos;);
+}
+
+document.addEventListener(&apos;click&apos;, function(){
+    console.log(&apos;click&apos;);
+})
+
+console.log(&apos;click begin&apos;);
+waitFiveSeconds();
+</code></pre><p>&#x8981;&#x60F3;&#x4E86;&#x89E3;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF0C;&#x9996;&#x5148;&#x4ECB;&#x7ECD;&#x4E0B;&#x5B9A;&#x65F6;&#x5668;&#x3002;</p>
+<p><code>setTimeout</code>&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x95F4;&#x9694;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x540E;&#xFF0C;&#x5C06;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x63D2;&#x5165;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x7B49;&#x6808;&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x90FD;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x518D;&#x6267;&#x884C;&#x3002;&#x56E0;&#x4E3A;&#x6808;&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x4E5F;&#x4F1A;&#x8017;&#x65F6;&#xFF0C;<strong>&#x6240;&#x4EE5;&#x95F4;&#x9694;&#x7684;&#x65F6;&#x95F4;&#x4E00;&#x822C;&#x4F1A;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;</strong>&#x3002;</p>
+<p><code>setTimeout(fn, 0)</code>&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x5C06;&#x56DE;&#x8C03;&#x51FD;&#x6570;fn&#x7ACB;&#x523B;&#x63D2;&#x5165;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x7B49;&#x5F85;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x3002;&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre class="language-"><code>setTimeout(function() {
+    console.log(&quot;a&quot;)
+}, 0)
+
+for(let i=0; i&lt;10000; i++) {}
+console.log(&quot;b&quot;)
+</code></pre><p>&#x6253;&#x5370;&#x7ED3;&#x679C;&#x8868;&#x660E;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5E76;&#x6CA1;&#x6709;&#x7ACB;&#x523B;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x662F;&#x7B49;&#x5F85;&#x6808;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x624D;&#x6267;&#x884C;&#x7684;&#x3002;&#x6808;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x591A;&#x4E45;&#xFF0C;&#x5B83;&#x5C31;&#x5F97;&#x7B49;&#x591A;&#x4E45;&#x3002;</p>
+<p>&#x7406;&#x89E3;&#x4E86;&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5C31;&#x5BB9;&#x6613;&#x5F97;&#x51FA;&#x4E86;&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x5148;&#x6267;&#x884C;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x3002;&#x5176;&#x4E2D;<code>waitFiveSeconds</code>&#x662F;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x6301;&#x7EED;&#x6267;&#x884C;&#x957F;&#x8FBE;5s&#x3002;</p>
+<pre class="language-"><code>0
+1
+2
+3
+4
+click begin
+finished waiting
+</code></pre><p>&#x7136;&#x540E;&#xFF0C;&#x5728;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&apos;timer a&apos;&#x5BF9;&#x5E94;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x4EA7;&#x751F;&#x7684;&#x56DE;&#x8C03;&#x3001; &apos;timer b&apos;&#x5BF9;&#x5E94;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x4EA7;&#x751F;&#x7684;&#x56DE;&#x8C03;&#x548C;&#x4E24;&#x6B21; click &#x5BF9;&#x5E94;&#x7684;&#x56DE;&#x8C03;&#x88AB;&#x5148;&#x540E;&#x653E;&#x5165;&#x6D88;&#x606F;&#x961F;&#x5217;&#x3002;&#x7531;&#x4E8E;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x7A7A;&#x95F2;&#x540E;&#xFF0C;&#x4F1A;<strong>&#x5148;&#x67E5;&#x770B;&#x662F;&#x5426;&#x6709;&#x4E8B;&#x4EF6;&#x53EF;&#x6267;&#x884C;</strong>&#xFF0C;&#x63A5;&#x7740;&#x518D;&#x5904;&#x7406;&#x5176;&#x4ED6;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x3002;&#x56E0;&#x6B64;&#x4F1A;&#x4EA7;&#x751F; &#x4E0B;&#x9762;&#x7684;&#x8F93;&#x51FA;&#x987A;&#x5E8F;&#x3002;</p>
+<pre class="language-"><code>click
+click
+timer a
+timer b
+</code></pre><p>&#x6700;&#x540E;&#xFF0C;5s &#x540E;&#x7684;&#x4E24;&#x6B21; click &#x4E8B;&#x4EF6;&#x88AB;&#x653E;&#x5165;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x7531;&#x4E8E;&#x6B64;&#x65F6;JS&#x5F15;&#x64CE;&#x7EBF;&#x7A0B;&#x7A7A;&#x95F2;&#xFF0C;&#x4FBF;&#x88AB;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x4E86;&#x3002;</p>
+<h3 id="javascript&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x4E0E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;"><a name="javascript&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x4E0E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;" class="anchor-navigation-ex-anchor" href="#javascript&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x4E0E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScript&#x4E2D;&#x7684;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x4E0E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;</h3>
+<p>JavaScript&#x4E2D;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6709;&#x4E24;&#x79CD;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x4E0E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;&#x3002;
+&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x662F;&#x6307;&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x5C06;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x8FDB;&#x53BB;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x8C03;&#x7528;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x5B9E;&#x73B0;&#x56DE;&#x8C03;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684;callback&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x540C;&#x6B65;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x6CA1;&#x6709;&#x5229;&#x7528;&#x4E8B;&#x4EF6;&#x8F6E;&#x8BE2;&#x673A;&#x5236;&#x6765;&#x5B9E;&#x73B0;&#x56DE;&#x8C03;&#xFF0C;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x90FD;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x5F53;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x4F1A;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x81EA;&#x4E0A;&#x800C;&#x4E0B;&#x7684;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#x4E2D;&#x5982;&#x679C;&#x6709;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#x4F1A;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5F02;&#x6B65;&#x56DE;&#x8C03;&#x662F;&#x6307;js&#x5728;&#x6267;&#x884C;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x5982;&#x6587;&#x4EF6;io&#x3001;ajax&#x8BF7;&#x6C42;&#x3001;setTimeout&#x3001;http&#x8FDE;&#x63A5;&#x7B49;&#xFF09;&#x65F6;&#xFF0C;&#x4E3A;&#x907F;&#x514D;&#x4E3B;&#x7EBF;&#x7A0B;&#x963B;&#x585E;&#xFF0C;JavaScript&#x4F7F;&#x7528;&#x4E86;&#x5F02;&#x6B65;&#x673A;&#x5236;&#xFF0C;&#x5373;&#x9047;&#x5230;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x65F6;&#x5C06;&#x5176;&#x653E;&#x5165;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x4E0D;&#x6267;&#x884C;&#xFF0C;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x540E;&#xFF0C;&#x518D;&#x4ECE;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x653E;&#x5230;&#x6267;&#x884C;&#x6808;&#x4E2D;&#xFF0C;&#x6267;&#x884C;&#x6808;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x518D;&#x8BFB;&#x53D6;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x4E0D;&#x65AD;&#x5FAA;&#x73AF;&#xFF0C;&#x5373;&#x4E8B;&#x4EF6;&#x8F6E;&#x8BE2;&#x3002;
+JavaScript&#x4E2D;promise&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#xFF0C;then&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5C5E;&#x4E8E;&#x5F02;&#x6B65;&#x56DE;&#x8C03;</p>
+<p>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5D4C;&#x5957;&#x8FC7;&#x591A;&#x4F1A;&#x51FA;&#x73B0;&#x56DE;&#x8C03;&#x5730;&#x72F1;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;promise&#x6765;&#x89E3;&#x51B3;</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res<span class="token punctuation">,</span> rej</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res<span class="token punctuation">,</span> rej</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+b<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;-----------------&#x540C;&#x6B65;&#x56DE;&#x8C03;-----------&apos;</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;c&apos;</span><span class="token punctuation">)</span>
+<span class="token function">f1</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;d&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;e&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;f&apos;</span><span class="token punctuation">)</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">f2</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;g&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;h&apos;</span><span class="token punctuation">)</span>
+&#x7ED3;&#x679C;&#xFF1A;
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#x6708;&#x660E; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2022-03-14 16:18:56
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="JavaScript实现图片懒加载(Lazyload" class="navigation navigation-prev " aria-label="Previous page: JavaScript实现图片懒加载(Lazyload)   掘金">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Javascript面向对象编程（二）：构造函数的继承 - 阮一峰的网络日志.html" class="navigation navigation-next " aria-label="Next page: Javascript面向对象编程（二）：构造函数的继承   阮一峰的网络日志">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JavaScript异步机制详解","level":"1.4.38","depth":2,"next":{"title":"Javascript面向对象编程（二）：构造函数的继承   阮一峰的网络日志","level":"1.4.39","depth":2,"path":"笔记/js笔记/Javascript面向对象编程（二）：构造函数的继承 - 阮一峰的网络日志.md","ref":"笔记/js笔记/Javascript面向对象编程（二）：构造函数的继承 - 阮一峰的网络日志.md","articles":[]},"previous":{"title":"JavaScript实现图片懒加载(Lazyload)   掘金","level":"1.4.37","depth":2,"path":"笔记/js笔记/JavaScript实现图片懒加载(Lazyload","ref":"笔记/js笔记/JavaScript实现图片懒加载(Lazyload","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","-sharing","-fontsettings","search-pro","chapter-fold","expandable-chapters","splitter","anchor-navigation-ex","lightbox","tbfed-pagefooter","hide-element","prism","copy-code-button","editlink","summary"],"root":"/doc","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"月明","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"ignore":["null","undefined","vue","HTML","clang","cmd","tex","mysql"]},"editlink":{"label":"Edit This Page","multilingual":false,"base":"https://github.com/moon610"},"summary":{},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":true,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"月歌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook","gitbook":"3.2.3","description":"记录学习和生活"},"file":{"path":"笔记/js笔记/JavaScript异步机制详解.md","mtime":"2022-03-14T08:18:56.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-08T09:42:34.661Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
