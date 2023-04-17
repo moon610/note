@@ -18,7 +18,7 @@
 
 echo "开始编译gitbook"
 
-gitbook build . note
+gitbook build . dist
 
  
 echo "开始执行git命令"
@@ -57,7 +57,11 @@ echo "####### 推送成功note #######"
 
 echo "####### 复制到GitPage #######"
 
+cp -rf ./dist ./note
+
 cp -rf ./note ../../moon610.github.io
+
+rm -rf ./note
 
 echo "####### 进入GitPage目录 #######"
 
