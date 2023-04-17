@@ -35,6 +35,11 @@ echo "####### 添加文件 #######"
  
 #git commit -m "$1"
 
+#通过read命令获取输入，动态设置commit内容
+#read commit
+
+#git commit -m "$commit"
+
 git commit -m "update note `date +%Y-%m-%d,%H:%M:%S`" 
  
 echo "####### commit #######"
