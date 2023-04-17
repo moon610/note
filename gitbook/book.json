@@ -52,7 +52,7 @@
               ]
         },
         "editlink": {
-            "base": "https://github.com/moon610",
+            "base": "https://github.com/moon610/note/tree/master/gitbook/doc",
             "label": "Edit This Page",
             "multilingual": false
         }
