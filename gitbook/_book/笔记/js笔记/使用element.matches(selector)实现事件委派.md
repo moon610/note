@@ -1,2 +1,0 @@
-使用element.matches(selector)实现事件委派
-matches方法判断参数中的选择器能否选中当前元素，返回布尔值
