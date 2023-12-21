@@ -3,7 +3,7 @@
 
 - [HTML与CSS基础]()
     - [BFC](笔记/HTML与CSS基础/BFC.md)
-    - [JavaScript Class详解](笔记/HTML与CSS基础/JavaScript class详解.md)
+    - [JavaScript Class详解](笔记/HTML与CSS基础/JavaScript-class详解.md)
     - [JavaScript使用 Fetch](笔记/HTML与CSS基础/JavaScript使用 Fetch.md)
     - [H5笔记](笔记/HTML与CSS基础/h5笔记.md)
     - [Margin合并重叠问题](笔记/HTML与CSS基础/margin合并重叠问题.md)
